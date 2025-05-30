@@ -64,14 +64,23 @@
 
         <div class="result-container">
             <div class="result">
-                <label>Data após 2 anos e meio:</label>
+                <label>Data após 2,5 anos:</label>
                 <input type="text" id="dateAfter2_5Years" readonly>
                 <button onclick="copyToClipboard('dateAfter2_5Years')">Copiar</button>
             </div>
             <div class="result">
-                <label>Data após 4 anos e meio:</label>
+                <label>Data após 3 anos:</label>
+                <input type="text" id="dateAfter3Years" readonly>
+                <button onclick="copyToClipboard('dateAfter3Years')">Copiar</button>            </div>
+            <div class="result">
+                <label>Data após 4,5 anos:</label>
                 <input type="text" id="dateAfter4_5Years" readonly>
                 <button onclick="copyToClipboard('dateAfter4_5Years')">Copiar</button>
+            </div>
+            <div class="result">
+                <label>Data após 5,5 anos:</label>
+                <input type="text" id="dateAfter5_5Years" readonly>
+                <button onclick="copyToClipboard('dateAfter5_5Years')">Copiar</button>
             </div>
             <div class="result">
                 <label>Data após dias corridos:</label>
@@ -112,12 +121,16 @@
             const monthsToAdd = parseInt(document.getElementById('inputMonths').value) || 0;
 
             const dateAfter30Months = addMonths(new Date(inputDate), 30);
+            const dateAfter36Months = addMonths(new Date(inputDate), 36);
             const dateAfter54Months = addMonths(new Date(inputDate), 54);
+            const dateAfter66Months = addMonths(new Date(inputDate), 66);
             const dateAfterDays = addDays(new Date(inputDate), daysToAdd);
             const dateAfterModulesMonths = addMonths(new Date(inputDate), monthsToAdd);
 
             document.getElementById('dateAfter2_5Years').value = formatDateString(dateAfter30Months);
+            document.getElementById('dateAfter3Years').value = formatDateString(dateAfter36Months);
             document.getElementById('dateAfter4_5Years').value = formatDateString(dateAfter54Months);
+            document.getElementById('dateAfter5_5Years').value = formatDateString(dateAfter66Months);
             document.getElementById('dateAfterDays').value = formatDateString(dateAfterDays);
             document.getElementById('dateAfterMonths').value = formatDateString(dateAfterModulesMonths);
         }
